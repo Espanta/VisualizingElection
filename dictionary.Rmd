@@ -1,0 +1,26 @@
+---
+title: "Dictionary of Election Data"
+author: "Saeid Abolfazli"
+date: "June 3, 2016"
+output: html_document
+---
+ELECTION FORECASTING REVISITED
+```{r}
+file <- file.path("data","PollingData.csv")
+election <- read.csv(file)
+str(election)
+summary(election)
+```
+
+
+In the recitation from Unit 3, we used logistic regression on polling data in order to construct US presidential election predictions. We separated our data into a training set, containing data from 2004 and 2008 polls, and a test set, containing the data from 2012 polls. We then proceeded to develop a logistic regression model to forecast the 2012 US presidential election.
+
+In this homework problem, we'll revisit our logistic regression model from Unit 3, and learn how to plot the output on a map of the United States. Unlike what we did in the Crime lecture, this time we'll be plotting predictions rather than data!
+
+First, load the ggplot2, maps, and ggmap packages using the library function. All three packages should be installed on your computer from lecture, but if not, you may need to install them too using the install.packages function.
+
+Then, load the US map and save it to the variable statesMap, like we did during the Crime lecture:
+
+statesMap = map_data("state")
+
+The maps package contains other built-in maps, including a US county map, a world map, and maps for France and Italy.
